@@ -12,6 +12,7 @@
       </p>
     </div>
   </section>
+
   <section class="section candidates">
     <div class="section__title candidates__title">
       <button class="btn" [disabled]="isDisabled" (click)="startInterval()">
@@ -26,10 +27,25 @@
       </ng-container>
     </ul>
   </section>
+
   <section class="section">
     <div class="section__title">
       <button class="btn" (click)="logSream()">Log Stream</button>
       <span>stream$</span>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section__title">
+      <button class="btn" (click)="logDataFromService()">Log data</button>
+      <span>log data from service</span>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section__title">
+      <input type="text" placeholder="Search..." (click)="searchDataInput()"  #input>
+      <span>conditional search</span>
     </div>
   </section>
 </div>

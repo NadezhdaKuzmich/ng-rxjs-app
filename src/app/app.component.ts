@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
-import { filter, interval, map, of, take } from 'rxjs';
+import { Component, ElementRef, ViewChild } from '@angular/core';
+import { debounceTime, distinctUntilChanged, filter, fromEvent, interval, map, of, take } from 'rxjs';
+import { DataService } from './data.service';
 
 @Component({
   selector: 'app-root',
@@ -8,6 +9,9 @@ import { filter, interval, map, of, take } from 'rxjs';
 })
 export class AppComponent {
   title = 'app-rxjs-ng';
+  constructor(private dataService: DataService) {}
+
+  @ViewChild('input', { static: false }) input: ElementRef | undefined;
 
   stream$ = of(1, 2, 3, 4);
 
@@ -42,5 +46,21 @@ export class AppComponent {
 
   logSream() {
     this.stream$.subscribe((val) => console.log(val));
+  }
+
+  logDataFromService() {
+    this.dataService.getData().subscribe((val) => console.log(val));
+  }
+
+  searchDataInput() {
+    const minLength = 4;
+    fromEvent(this.input?.nativeElement, 'input')
+      .pipe(
+        map(() => this.input?.nativeElement.value),
+        filter((value) => !!value && value.length >= minLength),
+        debounceTime(1000),
+        distinctUntilChanged()
+      )
+      .subscribe((value) => console.log(value));
   }
 }
