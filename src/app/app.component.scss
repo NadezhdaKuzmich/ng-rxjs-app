@@ -1,0 +1,53 @@
+h1 {
+  margin-top: 20px;
+}
+
+.content-wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 20px 0 0;
+  gap: 10px 45px;
+
+  .visual-box {
+    display: block;
+    position: relative;
+    max-width: 218px;
+    min-width: 120px;
+    margin-left: -26px;
+
+    &::after {
+      content: "–";
+      position: absolute;
+      top: 50%;
+      right: -26px;
+      transform: translateY(-50%);
+    }
+
+    img {
+      width: 100%;
+      object-fit: cover;
+    }
+  }
+}
+
+.description {
+  max-width: 840px;
+}
+
+.candidates {
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    li {
+      max-width: 200px;
+      text-align: center;
+      border-radius: 8px;
+      border: 1px solid #572b8d;
+      padding: 10px;
+    }
+  }
+}
