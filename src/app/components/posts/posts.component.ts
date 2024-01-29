@@ -9,7 +9,7 @@ import { PostService } from '../../post.service';
 export class PostsComponent implements OnInit {
   constructor(private postService: PostService) {}
   postList: any[] = [];
-  post = {};
+  post: any = null;
 
   ngOnInit(): void {
     this.postService.getPosts().subscribe((val) => {

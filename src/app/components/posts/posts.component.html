@@ -6,7 +6,8 @@
     </div>
     <span>methods HttpClient</span>
   </div>
-  <!-- <div *ngIf="post?.title">
-    <p>{{ post.title }}</p>
-  </div> -->
+  <div class="post" *ngIf="post">
+    <h3>{{ post.title }}</h3>
+    <p>{{ post.body }}</p>
+  </div>
 </section>
