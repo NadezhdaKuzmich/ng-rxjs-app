@@ -17,6 +17,11 @@ h1 {
     min-width: 120px;
     margin-left: -26px;
 
+    &--square {
+      max-width: 100px;
+      min-width: 100px;
+    }
+
     &::after {
       content: "–";
       position: absolute;
@@ -40,6 +45,8 @@ h1 {
   &__list {
     display: flex;
     flex-direction: column;
+    list-style: none;
+    padding: 0;
     gap: 10px;
 
     li {
@@ -52,10 +59,9 @@ h1 {
   }
 }
 
-input {
-  width: 280px;
-  color: #887f92;
-  border: 2px solid #b095d2;
-  border-radius: 8px;
-  padding: 8px 14px;
+.section-http {
+  h2 {
+    color: #582a91;
+    text-align: center;
+  }
 }

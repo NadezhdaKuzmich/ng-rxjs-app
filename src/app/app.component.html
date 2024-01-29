@@ -44,8 +44,29 @@
 
   <section class="section">
     <div class="section__title">
-      <input type="text" placeholder="Search..." (click)="searchDataInput()"  #input>
+      <input
+        type="text"
+        placeholder="Search..."
+        (click)="searchDataInput()"
+        #input
+      />
       <span>conditional search</span>
     </div>
   </section>
+
+  <section class="section-http">
+    <h2>HTTPClient</h2>
+    <div class="content-wrap">
+      <div class="visual-box visual-box--square">
+        <img src="../assets/images/httpclient-logo.png" alt="HttpClient Logo" />
+      </div>
+      <p class="description">
+        механізм фреймворку Angular для взаємодії з віддаленим сервером через
+        HTTP. <br />
+        Методи: get, post, put, delete, request, head, jsonp, options, patch
+      </p>
+    </div>
+  </section>
+
+  <app-posts></app-posts>
 </div>

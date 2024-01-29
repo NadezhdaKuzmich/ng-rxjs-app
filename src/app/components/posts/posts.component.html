@@ -1,0 +1,12 @@
+<section class="section">
+  <div class="section__title">
+    <div class="search-field">
+      <input type="number" placeholder="Enter post id" #input />
+      <button class="btn" (click)="getPostById(+input.value)">Get Post</button>
+    </div>
+    <span>methods HttpClient</span>
+  </div>
+  <!-- <div *ngIf="post?.title">
+    <p>{{ post.title }}</p>
+  </div> -->
+</section>
