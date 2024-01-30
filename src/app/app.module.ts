@@ -5,18 +5,18 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
 import { PostsComponent } from './components/posts/posts.component';
+import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
+import { DataBaseService } from './data-base.service';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    PostsComponent
-  ],
+  declarations: [AppComponent, PostsComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    InMemoryWebApiModule.forRoot(DataBaseService, { passThruUnknownUrl: true }),
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
