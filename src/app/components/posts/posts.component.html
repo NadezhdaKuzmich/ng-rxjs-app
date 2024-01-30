@@ -11,3 +11,15 @@
     <p>{{ post.body }}</p>
   </div>
 </section>
+
+<section class="section">
+  <div class="section__title">
+    <div class="search-field">
+      <input type="text" placeholder="Enter username" #inputUser />
+      <button class="btn" (click)="getUserByName(inputUser.value)">
+        Log User
+      </button>
+    </div>
+    <span>methods HttpClient</span>
+  </div>
+</section>
